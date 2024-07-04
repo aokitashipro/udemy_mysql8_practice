@@ -1,0 +1,52 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: udemy-practice-php
+    volumes:
+      - ./php:/var/www/html
+      - ./config/php/php.ini:/usr/local/etc/php/php.ini
+    ports:
+      - "80:80"
+    networks:
+      - udemy-practice-network
+
+  mysql:
+    build:
+      context: .
+      dockerfile: docker/mysql/Dockerfile
+    platform: linux/x86_64
+    container_name: udemy-practice-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: udemy_practice
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password123
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./logs/mysql:/var/log/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - udemy-practice-network
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    platform: linux/x86_64
+    container_name: udemy-practice-phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - "8080:80"
+    networks:
+      - udemy-practice-network
+
+volumes:
+  mysql_data:
+
+networks:
+  udemy-practice-network:
+    driver: bridge

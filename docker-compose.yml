@@ -39,6 +39,7 @@ services:
       PMA_HOST: mysql
       PMA_PORT: 3306
       MYSQL_ROOT_PASSWORD: root_password
+      UPLOAD_LIMIT: 1G
     ports:
       - "8080:80"
     networks:

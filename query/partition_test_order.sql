@@ -28,12 +28,21 @@ INSERT INTO partition_test_order (order_id, order_date, customer_id, product_id,
 (4, '2027-03-30', 4, 104, 3, 4500),
 (5, '2028-01-05', 5, 105, 4, 6000);
 
+-- パーティションを指定したクエリ
+SELECT * FROM partition_test_order PARTITION (p2025) WHERE quantity > 1;
+
 -- パーティションの確認
 SHOW CREATE TABLE partition_test_order;
 
 -- EXPLAINでパフォーマンス確認
 EXPLAIN SELECT * FROM partition_test_order
 WHERE order_date BETWEEN '2022-01-01' AND '2022-12-31';
+
+-- パーティションの追加
+ALTER TABLE partition_test_order ADD PARTITION (PARTITION p2031 VALUES LESS THAN (2031));
+
+-- パーティション内のデータ削除
+ALTER TABLE partition_test_order TRUNCATE PARTITION p2024;
 
 -- パーティション情報の取得
 SELECT 

@@ -9,7 +9,7 @@ try {
 
     // 新しい顧客を追加
     $stmt = $pdo->prepare('INSERT INTO customers (name, email, created_at, updated_at) VALUES (?, ?, NOW(), NOW())');
-    $stmt->execute(['ロールバック', 'rollback@test.com']);
+    $stmt->execute(['正常トランザクション', 'success@test.com']);
     $customerId = $pdo->lastInsertId();
 
     // 新しい注文を追加
@@ -17,12 +17,13 @@ try {
     $stmt->execute([$customerId, 200]);
     $orderId = $pdo->lastInsertId();
 
-    // 注文詳細を追加 (わざとエラーを発生させるため、存在しないカラムを指定)
-    $stmt = $pdo->prepare('INSERT INTO order_details (order_id, product_id, price, quantity, created_at, updated_at, error_column) VALUES (?, ?, ?, NOW(), NOW(), ?)');
-    $stmt->execute([$orderId, 1, 500, 2, 'error']);
+    // 注文詳細を追加
+    $stmt = $pdo->prepare('INSERT INTO order_details (order_id, product_id, price, quantity, created_at, updated_at) VALUES (?, ?, ?, ?, NOW(), NOW())');
+    $stmt->execute([$orderId, 1, 500, 2]);
 
     // トランザクションをコミット
     $pdo->commit();
+    echo "トランザクションが正常に実行されました。";
 } catch (Exception $e) {
     // エラーが発生したらロールバック
     $pdo->rollBack();

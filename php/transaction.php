@@ -10,7 +10,7 @@ try {
     $pdo->beginTransaction();
     $stmt = $pdo->prepare("SELECT * FROM products WHERE id = 1 FOR UPDATE");
     $stmt->execute();
-    sleep(5); // ここで一時停止して、トランザクション2を実行させる
+    sleep(10); // ここで一時停止して、トランザクション2を実行させる
     $stmt = $pdo->prepare("SELECT * FROM products WHERE id = 2 FOR UPDATE");
     $stmt->execute();
     $pdo->commit();

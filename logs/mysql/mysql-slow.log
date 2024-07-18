@@ -4152,3 +4152,96 @@ SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTE
 # Query_time: 0.000094  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 18
 SET timestamp=1721260248;
 SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='TRIGGER' AND 'udemy_practice' LIKE `TABLE_SCHEMA`;
+# Time: 2024-07-18T00:14:40.713511Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   391
+# Query_time: 0.000502  Lock_time: 0.000001 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1721261680;
+SELECT 1 FROM (SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`COLUMN_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`TABLE_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES`) t WHERE `IS_GRANTABLE` = 'YES' AND '''user''@''%''' LIKE `GRANTEE` LIMIT 1;
+# Time: 2024-07-18T00:14:40.714160Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   391
+# Query_time: 0.000118  Lock_time: 0.000001 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1721261680;
+SELECT 1 FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE `PRIVILEGE_TYPE` = 'CREATE USER' AND '''user''@''%''' LIKE `GRANTEE` LIMIT 1;
+# Time: 2024-07-18T00:14:40.714432Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   391
+# Query_time: 0.000095  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1721261680;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='EVENT';
+# Time: 2024-07-18T00:14:40.714715Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   391
+# Query_time: 0.000108  Lock_time: 0.000001 Rows_sent: 1  Rows_examined: 18
+SET timestamp=1721261680;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='EVENT' AND 'udemy_practice' LIKE `TABLE_SCHEMA`;
+# Time: 2024-07-18T00:14:40.714946Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   391
+# Query_time: 0.000075  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1721261680;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='TRIGGER';
+# Time: 2024-07-18T00:14:40.715184Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   391
+# Query_time: 0.000090  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 18
+SET timestamp=1721261680;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='TRIGGER' AND 'udemy_practice' LIKE `TABLE_SCHEMA`;
+# Time: 2024-07-18T00:16:30.757148Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   393
+# Query_time: 0.000529  Lock_time: 0.000001 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1721261790;
+SELECT 1 FROM (SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`COLUMN_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`TABLE_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES`) t WHERE `IS_GRANTABLE` = 'YES' AND '''user''@''%''' LIKE `GRANTEE` LIMIT 1;
+# Time: 2024-07-18T00:16:30.757682Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   393
+# Query_time: 0.000120  Lock_time: 0.000001 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1721261790;
+SELECT 1 FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE `PRIVILEGE_TYPE` = 'CREATE USER' AND '''user''@''%''' LIKE `GRANTEE` LIMIT 1;
+# Time: 2024-07-18T00:16:30.758034Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   393
+# Query_time: 0.000097  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1721261790;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='EVENT';
+# Time: 2024-07-18T00:16:30.758318Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   393
+# Query_time: 0.000106  Lock_time: 0.000001 Rows_sent: 1  Rows_examined: 18
+SET timestamp=1721261790;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='EVENT' AND 'udemy_practice' LIKE `TABLE_SCHEMA`;
+# Time: 2024-07-18T00:16:30.758625Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   393
+# Query_time: 0.000070  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1721261790;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='TRIGGER';
+# Time: 2024-07-18T00:16:30.758850Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   393
+# Query_time: 0.000079  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 18
+SET timestamp=1721261790;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='TRIGGER' AND 'udemy_practice' LIKE `TABLE_SCHEMA`;
+# Time: 2024-07-18T00:16:31.794667Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   395
+# Query_time: 0.000451  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1721261791;
+SELECT 1 FROM (SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`COLUMN_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`TABLE_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` UNION SELECT `GRANTEE`, `IS_GRANTABLE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES`) t WHERE `IS_GRANTABLE` = 'YES' AND '''user''@''%''' LIKE `GRANTEE` LIMIT 1;
+# Time: 2024-07-18T00:16:31.795052Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   395
+# Query_time: 0.000130  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1721261791;
+SELECT 1 FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE `PRIVILEGE_TYPE` = 'CREATE USER' AND '''user''@''%''' LIKE `GRANTEE` LIMIT 1;
+# Time: 2024-07-18T00:16:31.795359Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   395
+# Query_time: 0.000127  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1721261791;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='EVENT';
+# Time: 2024-07-18T00:16:31.795694Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   395
+# Query_time: 0.000115  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 18
+SET timestamp=1721261791;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='EVENT' AND 'udemy_practice' LIKE `TABLE_SCHEMA`;
+# Time: 2024-07-18T00:16:31.795953Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   395
+# Query_time: 0.000082  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1721261791;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`USER_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='TRIGGER';
+# Time: 2024-07-18T00:16:31.796187Z
+# User@Host: user[user] @ udemy-practice-phpmyadmin.udemy_mysql_practice_udemy-practice-network [172.20.0.2]  Id:   395
+# Query_time: 0.000086  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 18
+SET timestamp=1721261791;
+SELECT `PRIVILEGE_TYPE` FROM `INFORMATION_SCHEMA`.`SCHEMA_PRIVILEGES` WHERE GRANTEE='''user''@''%''' AND PRIVILEGE_TYPE='TRIGGER' AND 'udemy_practice' LIKE `TABLE_SCHEMA`;
+/usr/sbin/mysqld, Version: 8.0.38 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
